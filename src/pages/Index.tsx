@@ -57,19 +57,32 @@ const Index = () => {
 
   const cases = [
     {
-      client: "Ювелирный бренд",
-      result: "+340% охват",
-      description: "Серия reels о создании украшений увеличила узнаваемость бренда в 3 раза"
+      image: "https://cdn.poehali.dev/files/1e910c78-f61d-4bfa-bdaa-ad480c0a65a5.png",
+      client: "2BRO",
+      result: "111 млн просмотров",
+      stats: "107.000 подписчиков",
+      description: "Развлекательный канал 2BRO с нуля. Ежедневные Shorts. Рекордный – на 16 млн просмотров."
     },
     {
-      client: "Ресторанная группа",
-      result: "+520% продаж",
-      description: "Вирусные reels с шеф-поваром привели к росту бронирований на 520%"
+      image: "https://cdn.poehali.dev/files/1e910c78-f61d-4bfa-bdaa-ad480c0a65a5.png",
+      client: "2ГИС",
+      result: "Снимаем для 2ГИС",
+      stats: "792 публикации",
+      description: "Делаем ролики под ключ: от идеи до готовых к выкладке Rilc. Наши ролики набирают больше, чем среднее по аккаунту."
     },
     {
-      client: "Fashion бутик",
-      result: "8.5M просмотров",
-      description: "Коллаборация с инфлюенсерами принесла миллионы органических просмотров"
+      image: "https://cdn.poehali.dev/files/1e910c78-f61d-4bfa-bdaa-ad480c0a65a5.png",
+      client: "Антонина Горская",
+      result: "680.000 просмотров",
+      stats: "Экспертный YouTube-канал",
+      description: "Подкаст по косметологии. Регулярные выпуски на все площадки + ежедневные Shorts."
+    },
+    {
+      image: "https://cdn.poehali.dev/files/1e910c78-f61d-4bfa-bdaa-ad480c0a65a5.png",
+      client: "TikTok барбершоп",
+      result: "5,9 млн просмотров",
+      stats: "На нулевом аккаунте",
+      description: "Аккаунт барбершопа, созданный с нуля. Выложено 9 роликов. 2 из них набрали 4,2млн и 1,7млн просмотров."
     }
   ];
 
@@ -188,14 +201,18 @@ const Index = () => {
             <h2 className="text-4xl md:text-5xl font-bold mb-4">Кейсы</h2>
             <p className="text-xl text-muted-foreground">Результаты, которые вдохновляют</p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {cases.map((caseItem, idx) => (
-              <Card key={idx} className="p-8 bg-card animate-scale-in" style={{ animationDelay: `${idx * 0.1}s` }}>
-                <div className="mb-6">
-                  <div className="text-5xl font-bold text-primary mb-2">{caseItem.result}</div>
-                  <div className="text-sm text-muted-foreground uppercase tracking-wider">{caseItem.client}</div>
+              <Card key={idx} className="overflow-hidden bg-card animate-scale-in hover:scale-105 transition-all duration-300" style={{ animationDelay: `${idx * 0.1}s` }}>
+                <div className="aspect-[3/4] relative overflow-hidden bg-secondary">
+                  <img src={caseItem.image} alt={caseItem.client} className="w-full h-full object-cover" />
                 </div>
-                <p className="text-muted-foreground leading-relaxed">{caseItem.description}</p>
+                <div className="p-6">
+                  <h3 className="text-2xl font-bold mb-2">{caseItem.result}</h3>
+                  <div className="text-sm text-primary font-medium mb-3">{caseItem.stats}</div>
+                  <div className="text-xs text-muted-foreground uppercase tracking-wider mb-3">{caseItem.client}</div>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{caseItem.description}</p>
+                </div>
               </Card>
             ))}
           </div>
