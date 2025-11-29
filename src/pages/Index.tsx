@@ -219,6 +219,118 @@ const Index = () => {
         </div>
       </section>
 
+      <section id="process" className="py-20 px-6 bg-secondary/30">
+        <div className="container mx-auto">
+          <div className="text-center mb-16 animate-fade-in">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">8 шагов до результативных рилс</h2>
+            <p className="text-xl text-muted-foreground">Наша проверенная система создания вирусного контента</p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+            {[
+              { num: "01", title: "Анализ ниши", desc: "Изучаем вашу аудиторию, конкурентов и актуальные тренды в вашей сфере" },
+              { num: "02", title: "Разработка концепции", desc: "Создаём уникальную идею, которая зацепит зрителя с первых секунд" },
+              { num: "03", title: "Написание сценария", desc: "Прописываем сюжет, диалоги и визуальный ряд с учётом алгоритмов" },
+              { num: "04", title: "Подготовка к съёмке", desc: "Подбираем локации, реквизит, актёров и планируем съёмочный день" },
+              { num: "05", title: "Съёмка материала", desc: "Снимаем на профессиональное оборудование с киноматографичной картинкой" },
+              { num: "06", title: "Монтаж и эффекты", desc: "Собираем ролик, добавляем динамику, переходы и спецэффекты" },
+              { num: "07", title: "Цветокоррекция", desc: "Создаём уникальную стилистику и настроение через цветокоррекцию" },
+              { num: "08", title: "Оптимизация", desc: "Адаптируем под форматы и алгоритмы каждой платформы" }
+            ].map((step, idx) => (
+              <Card key={idx} className="p-6 bg-card hover:bg-secondary/50 transition-all duration-300 animate-scale-in" style={{ animationDelay: `${idx * 0.05}s` }}>
+                <div className="text-5xl font-bold text-primary/20 mb-4">{step.num}</div>
+                <h3 className="text-xl font-semibold mb-3">{step.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="niches" className="py-20 px-6">
+        <div className="container mx-auto">
+          <div className="text-center mb-16 animate-fade-in">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Примеры роликов в разных нишах</h2>
+            <p className="text-xl text-muted-foreground">Опыт работы с брендами из различных сфер</p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {[
+              { title: "Ювелирные бренды", desc: "Крупные планы украшений, процесс создания, истории камней", icon: "Gem" },
+              { title: "Рестораны и кафе", desc: "Приготовление блюд, атмосфера заведения, шеф-повара", icon: "UtensilsCrossed" },
+              { title: "Fashion и одежда", desc: "Показы коллекций, стилизации, закулисье модных съёмок", icon: "Shirt" },
+              { title: "Косметология и бьюти", desc: "Процедуры, результаты до/после, экспертные советы", icon: "Sparkles" },
+              { title: "Фитнес и спорт", desc: "Тренировки, трансформации клиентов, мотивационный контент", icon: "Dumbbell" },
+              { title: "Недвижимость", desc: "Туры по объектам, обзоры локаций, советы по выбору", icon: "Home" },
+              { title: "Образование", desc: "Полезные уроки, лайфхаки, разбор кейсов", icon: "GraduationCap" },
+              { title: "Авто и мото", desc: "Тест-драйвы, обзоры, технические особенности", icon: "Car" },
+              { title: "Развлечения", desc: "Челленджи, реакции, вирусные форматы", icon: "PartyPopper" }
+            ].map((niche, idx) => (
+              <Card key={idx} className="p-8 bg-card hover:bg-secondary/50 transition-all duration-300 cursor-pointer animate-scale-in group" style={{ animationDelay: `${idx * 0.05}s` }}>
+                <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <Icon name={niche.icon as any} size={28} className="text-primary" />
+                </div>
+                <h3 className="text-xl font-semibold mb-2">{niche.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{niche.desc}</p>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="results" className="py-20 px-6 bg-secondary/30">
+        <div className="container mx-auto">
+          <div className="text-center mb-16 animate-fade-in">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Что мы делаем для результата</h2>
+            <p className="text-xl text-muted-foreground">Секреты миллионных просмотров</p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {[
+              {
+                icon: "Target",
+                title: "Попадаем в тренды",
+                desc: "Ежедневно мониторим тренды и адаптируем их под ваш бренд, сохраняя уникальность"
+              },
+              {
+                icon: "Zap",
+                title: "Хук в первые 3 секунды",
+                desc: "Цепляем внимание зрителя с первого кадра — это критично для алгоритмов"
+              },
+              {
+                icon: "Film",
+                title: "Киноматографичная картинка",
+                desc: "Профессиональная камера, свет и цветокоррекция — ваш контент выделяется в ленте"
+              },
+              {
+                icon: "Brain",
+                title: "Знание алгоритмов",
+                desc: "Понимаем, как работают рекомендации в каждой соцсети и оптимизируем под них"
+              },
+              {
+                icon: "Users",
+                title: "Эмоциональная связь",
+                desc: "Создаём истории, которые вызывают эмоции и заставляют делиться"
+              },
+              {
+                icon: "BarChart3",
+                title: "Аналитика и улучшение",
+                desc: "Отслеживаем метрики каждого ролика и применяем выводы в следующих проектах"
+              }
+            ].map((item, idx) => (
+              <Card key={idx} className="p-8 bg-card hover:bg-secondary/50 transition-colors duration-300 animate-scale-in" style={{ animationDelay: `${idx * 0.1}s` }}>
+                <div className="flex items-start gap-6">
+                  <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <Icon name={item.icon as any} size={28} className="text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold mb-3">{item.title}</h3>
+                    <p className="text-muted-foreground leading-relaxed">{item.desc}</p>
+                  </div>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section id="about" className="py-20 px-6">
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-12 animate-fade-in">
