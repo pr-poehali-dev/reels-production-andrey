@@ -57,31 +57,39 @@ const Index = () => {
 
   const cases = [
     {
-      image: "https://cdn.poehali.dev/files/1e910c78-f61d-4bfa-bdaa-ad480c0a65a5.png",
+      image: "https://cdn.poehali.dev/files/166229b9-924d-4290-8107-c04731323eb9.jpg",
       client: "2BRO",
-      result: "111 млн просмотров",
-      stats: "107.000 подписчиков",
-      description: "Развлекательный канал 2BRO с нуля. Ежедневные Shorts. Рекордный – на 16 млн просмотров."
+      result: "111 955 202 просмотра",
+      stats: "YouTube • 111 млн",
+      handle: "@2BRO_SHOW",
+      subscribers: "107 тыс. подписчиков",
+      videos: "354 видео",
+      description: "Развлекательный канал с нуля. Ежедневные Shorts. Рекордный – на 16 млн просмотров."
     },
     {
-      image: "https://cdn.poehali.dev/files/1e910c78-f61d-4bfa-bdaa-ad480c0a65a5.png",
-      client: "2ГИС",
-      result: "Снимаем для 2ГИС",
-      stats: "792 публикации",
-      description: "Делаем ролики под ключ: от идеи до готовых к выкладке Rilc. Наши ролики набирают больше, чем среднее по аккаунту."
-    },
-    {
-      image: "https://cdn.poehali.dev/files/1e910c78-f61d-4bfa-bdaa-ad480c0a65a5.png",
+      image: "https://cdn.poehali.dev/files/f15a933c-77e3-47f3-9f97-9b91356b74cf.jpg",
       client: "Антонина Горская",
-      result: "680.000 просмотров",
-      stats: "Экспертный YouTube-канал",
-      description: "Подкаст по косметологии. Регулярные выпуски на все площадки + ежедневные Shorts."
+      result: "679 714 просмотров",
+      stats: "YouTube • Узкая экспертная ниша",
+      handle: "@collagen_podcast",
+      subscribers: "3,33 тыс. подписчиков",
+      videos: "386 видео",
+      description: "Научный подкаст по косметологии. Регулярные выпуски + ежедневные Shorts."
     },
     {
-      image: "https://cdn.poehali.dev/files/1e910c78-f61d-4bfa-bdaa-ad480c0a65a5.png",
-      client: "TikTok барбершоп",
+      image: "https://cdn.poehali.dev/files/2f3b226b-7491-45d6-be7c-907a9a2ab4c5.jpg",
+      client: "Рекордные просмотры",
+      result: "Рекордные просмотры на 4х аккаунтах",
+      stats: "Инст* и TikTok",
+      highlights: ["991 тыс.", "1,1 млн", "811 тыс."],
+      description: "Три ролика с рекордными охватами для разных брендов: бизнес-коучинг, кофейня, косметология."
+    },
+    {
+      image: "https://cdn.poehali.dev/files/a97cbffd-3c65-47b4-908b-972cb4e6372c.jpg",
+      client: "Нулевой TikTok-аккаунт",
       result: "5,9 млн просмотров",
-      stats: "На нулевом аккаунте",
+      stats: "Барбершоп с нуля",
+      highlights: ["1,7 млн", "4,2 млн"],
       description: "Аккаунт барбершопа, созданный с нуля. Выложено 9 роликов. 2 из них набрали 4,2млн и 1,7млн просмотров."
     }
   ];
@@ -201,16 +209,36 @@ const Index = () => {
             <h2 className="text-4xl md:text-5xl font-bold mb-4">Кейсы</h2>
             <p className="text-xl text-muted-foreground">Результаты, которые вдохновляют</p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {cases.map((caseItem, idx) => (
               <Card key={idx} className="overflow-hidden bg-card animate-scale-in hover:scale-105 transition-all duration-300" style={{ animationDelay: `${idx * 0.1}s` }}>
-                <div className="aspect-[3/4] relative overflow-hidden bg-secondary">
-                  <img src={caseItem.image} alt={caseItem.client} className="w-full h-full object-cover" />
+                <div className="relative overflow-hidden bg-secondary">
+                  <img src={caseItem.image} alt={caseItem.client} className="w-full h-auto object-cover" />
                 </div>
-                <div className="p-6">
-                  <h3 className="text-2xl font-bold mb-2">{caseItem.result}</h3>
-                  <div className="text-sm text-primary font-medium mb-3">{caseItem.stats}</div>
-                  <div className="text-xs text-muted-foreground uppercase tracking-wider mb-3">{caseItem.client}</div>
+                <div className="p-8">
+                  {caseItem.handle && (
+                    <div className="text-sm text-muted-foreground mb-2">{caseItem.handle}</div>
+                  )}
+                  <h3 className="text-3xl font-bold mb-3">{caseItem.client}</h3>
+                  {caseItem.subscribers && (
+                    <div className="text-sm text-muted-foreground mb-4">
+                      {caseItem.subscribers} • {caseItem.videos}
+                    </div>
+                  )}
+                  <div className="flex items-center gap-2 mb-4">
+                    <Icon name="TrendingUp" size={20} className="text-primary" />
+                    <div className="text-2xl font-bold text-primary">{caseItem.result}</div>
+                  </div>
+                  {caseItem.highlights && (
+                    <div className="flex gap-3 mb-4">
+                      {caseItem.highlights.map((highlight, i) => (
+                        <div key={i} className="px-3 py-1 bg-primary/10 rounded-full text-sm font-medium text-primary">
+                          {highlight}
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                  <div className="text-xs text-primary font-medium mb-3">{caseItem.stats}</div>
                   <p className="text-sm text-muted-foreground leading-relaxed">{caseItem.description}</p>
                 </div>
               </Card>
