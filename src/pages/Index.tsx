@@ -39,19 +39,88 @@ const Index = () => {
 
   const portfolio = [
     {
-      image: "https://cdn.poehali.dev/projects/fe7e43e7-22fd-427c-97c3-24fb8bd196ea/files/dd319b6f-084a-49a8-b930-043ee9663b34.jpg",
-      title: "Премиум бренд",
-      views: "2.5M"
+      image: "https://cdn.poehali.dev/files/166229b9-924d-4290-8107-c04731323eb9.jpg",
+      title: "Ты же тоже с волосами",
+      views: "16 млн",
+      category: "Развлекательный контент",
+      platform: "YouTube Shorts"
     },
     {
-      image: "https://cdn.poehali.dev/projects/fe7e43e7-22fd-427c-97c3-24fb8bd196ea/files/c13bb8a8-1105-4323-b419-44830fcec063.jpg",
-      title: "Behind the scenes",
-      views: "1.8M"
+      image: "https://cdn.poehali.dev/files/166229b9-924d-4290-8107-c04731323eb9.jpg",
+      title: "Томатный сок",
+      views: "11 млн",
+      category: "Вирусные челленджи",
+      platform: "YouTube Shorts"
     },
     {
-      image: "https://cdn.poehali.dev/projects/fe7e43e7-22fd-427c-97c3-24fb8bd196ea/files/13be16e2-0fc8-41d0-bd0c-42ac26396bec.jpg",
-      title: "Lifestyle контент",
-      views: "3.2M"
+      image: "https://cdn.poehali.dev/files/166229b9-924d-4290-8107-c04731323eb9.jpg",
+      title: "Как вода просто",
+      views: "11 млн",
+      category: "Реакции и обзоры",
+      platform: "YouTube Shorts"
+    },
+    {
+      image: "https://cdn.poehali.dev/files/166229b9-924d-4290-8107-c04731323eb9.jpg",
+      title: "Сможешь?",
+      views: "10 млн",
+      category: "Интерактивный контент",
+      platform: "YouTube Shorts"
+    },
+    {
+      image: "https://cdn.poehali.dev/files/166229b9-924d-4290-8107-c04731323eb9.jpg",
+      title: "Заходит один пожарный",
+      views: "5,8 млн",
+      category: "Скетчи и юмор",
+      platform: "YouTube Shorts"
+    },
+    {
+      image: "https://cdn.poehali.dev/files/166229b9-924d-4290-8107-c04731323eb9.jpg",
+      title: "Серьёзно пошла?",
+      views: "4,6 млн",
+      category: "Ситуативный юмор",
+      platform: "YouTube Shorts"
+    },
+    {
+      image: "https://cdn.poehali.dev/files/f15a933c-77e3-47f3-9f97-9b91356b74cf.jpg",
+      title: "Коллагеностимуляция глазами доктора",
+      views: "47 тыс.",
+      category: "Экспертный контент",
+      platform: "YouTube"
+    },
+    {
+      image: "https://cdn.poehali.dev/files/f15a933c-77e3-47f3-9f97-9b91356b74cf.jpg",
+      title: "Страхи врачей о полимолочной кислоте",
+      views: "18 тыс.",
+      category: "Образовательный",
+      platform: "YouTube"
+    },
+    {
+      image: "https://cdn.poehali.dev/files/2f3b226b-7491-45d6-be7c-907a9a2ab4c5.jpg",
+      title: "Как прийти к счастью?",
+      views: "991 тыс.",
+      category: "Бизнес и коучинг",
+      platform: "Instagram Reels"
+    },
+    {
+      image: "https://cdn.poehali.dev/files/2f3b226b-7491-45d6-be7c-907a9a2ab4c5.jpg",
+      title: "Кофейные зёрна крупный план",
+      views: "1,1 млн",
+      category: "Эстетика и продукт",
+      platform: "TikTok"
+    },
+    {
+      image: "https://cdn.poehali.dev/files/2f3b226b-7491-45d6-be7c-907a9a2ab4c5.jpg",
+      title: "Безопасность в косметологии",
+      views: "811 тыс.",
+      category: "Экспертиза",
+      platform: "Instagram Reels"
+    },
+    {
+      image: "https://cdn.poehali.dev/files/a97cbffd-3c65-47b4-908b-972cb4e6372c.jpg",
+      title: "Закреплённый рилс барбершопа",
+      views: "1,7 млн",
+      category: "Локальный бизнес",
+      platform: "TikTok"
     }
   ];
 
@@ -157,17 +226,26 @@ const Index = () => {
             <h2 className="text-4xl md:text-5xl font-bold mb-4">Портфолио</h2>
             <p className="text-xl text-muted-foreground">Работы, которые говорят сами за себя</p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-6">
             {portfolio.map((item, idx) => (
-              <Card key={idx} className="group overflow-hidden bg-card hover:scale-105 transition-transform duration-300 cursor-pointer animate-scale-in" style={{ animationDelay: `${idx * 0.1}s` }}>
-                <div className="relative aspect-[9/16] overflow-hidden">
+              <Card key={idx} className="group overflow-hidden bg-card hover:scale-105 transition-transform duration-300 cursor-pointer animate-scale-in" style={{ animationDelay: `${idx * 0.05}s` }}>
+                <div className="relative aspect-[9/16] overflow-hidden bg-secondary">
                   <img src={item.image} alt={item.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <div className="absolute bottom-0 left-0 right-0 p-6 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                    <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-                    <div className="flex items-center gap-2 text-primary">
-                      <Icon name="Eye" size={16} />
-                      <span className="text-sm font-medium">{item.views} просмотров</span>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
+                  <div className="absolute top-4 right-4 px-3 py-1 bg-black/60 backdrop-blur-sm rounded-full">
+                    <div className="flex items-center gap-1.5">
+                      <Icon name="Eye" size={14} className="text-white" />
+                      <span className="text-xs font-bold text-white">{item.views}</span>
+                    </div>
+                  </div>
+                  <div className="absolute bottom-0 left-0 right-0 p-4">
+                    <div className="text-xs text-white/70 mb-1">{item.platform}</div>
+                    <h3 className="text-base font-bold text-white mb-1 line-clamp-2">{item.title}</h3>
+                    <div className="text-xs text-primary font-medium">{item.category}</div>
+                  </div>
+                  <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <div className="w-16 h-16 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                      <Icon name="Play" size={32} className="text-white ml-1" />
                     </div>
                   </div>
                 </div>
