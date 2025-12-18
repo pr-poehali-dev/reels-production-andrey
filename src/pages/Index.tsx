@@ -223,8 +223,8 @@ const Index = () => {
       <section id="portfolio" className="py-20 px-6 bg-secondary/30">
         <div className="container mx-auto">
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Портфолио</h2>
-            <p className="text-xl text-muted-foreground">Работы, которые говорят сами за себя</p>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Результаты наших Reels</h2>
+            <p className="text-xl text-muted-foreground">А ниже на сайте вы найдете и кейсы</p>
           </div>
           <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-6">
             {portfolio.map((item, idx) => (
