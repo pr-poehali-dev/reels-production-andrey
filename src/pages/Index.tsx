@@ -5,12 +5,14 @@ import { useState } from "react";
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState("hero");
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
       setActiveSection(id);
+      setMobileMenuOpen(false);
     }
   };
 
@@ -152,12 +154,37 @@ const Index = () => {
                 </button>
               ))}
             </div>
-            <Button size="sm" className="hidden md:flex">
+            <Button size="sm" className="hidden md:flex" onClick={() => window.open('https://t.me/brahman_sveta', '_blank')}>
               <Icon name="Send" size={16} className="mr-2" />
               Telegram
             </Button>
+            <button 
+              className="md:hidden p-2 hover:bg-secondary rounded-lg transition-colors"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            >
+              <Icon name={mobileMenuOpen ? "X" : "Menu"} size={24} />
+            </button>
           </div>
         </div>
+        {mobileMenuOpen && (
+          <div className="md:hidden bg-background/95 backdrop-blur-xl border-t border-border">
+            <div className="container mx-auto px-6 py-4 space-y-4">
+              {["Главная", "Портфолио", "Примеры", "Кейсы", "О нас", "Контакты"].map((item, idx) => (
+                <button
+                  key={item}
+                  onClick={() => scrollToSection(["hero", "portfolio", "examples", "cases", "about", "contacts"][idx])}
+                  className="block w-full text-left py-2 text-base font-medium hover:text-primary transition-colors"
+                >
+                  {item}
+                </button>
+              ))}
+              <Button size="sm" className="w-full" onClick={() => window.open('https://t.me/brahman_sveta', '_blank')}>
+                <Icon name="Send" size={16} className="mr-2" />
+                Telegram
+              </Button>
+            </div>
+          </div>
+        )}
       </nav>
 
       <section id="hero" className="relative pt-32 pb-20 px-6 overflow-hidden min-h-[90vh] flex items-center">
@@ -563,28 +590,28 @@ const Index = () => {
           <div className="space-y-4">
             {[
               {
-                q: "Сколько времени занимает производство одного Reels?",
-                a: "От 3 до 7 рабочих дней в зависимости от сложности проекта. Срочные заказы — от 24 часов за дополнительную плату."
+                q: "Нужно ли мне придумывать идеи для видео?",
+                a: "Нет, это наша задача. Мы проводим распаковку вашей экспертности, анализируем нишу и конкурентов. На выходе вы получаете готовые сценарии с раскадровкой, адаптированные под тренды и ваши бизнес-задачи."
               },
               {
-                q: "Работаете ли вы с брендами из других городов?",
-                a: "Да, основная съёмка проходит в Москве, но мы готовы выехать в другие города. Также работаем удалённо — вы присылаете материалы, мы создаём сценарий и монтируем."
+                q: "Нужно ли учить текст наизусть?",
+                a: "Нет, это не обязательно. При необходимости, мы используем телесуфлер. Вы просто читаете готовый текст с экрана камеры, сохраняя контакт со зрителем. Это экономит время и нервы. Или делаем контакт глаз через нейросеть."
               },
               {
-                q: "Что входит в стоимость съёмки Reels под ключ?",
-                a: "Полный цикл: анализ ниши, разработка концепции, сценарий, съёмка, монтаж, цветокоррекция, звук, спецэффекты, адаптация под платформы."
+                q: "Я никогда не снимался и боюсь камеры. Что делать?",
+                a: "Это нормально. На площадке мы подскажем, как встать, куда смотреть, с какой интонацией сказать фразу. Мы будем делать дубли, пока не добьемся результата."
               },
               {
-                q: "Гарантируете ли вы вирусность роликов?",
-                a: "Мы используем проверенные методы и знание алгоритмов, но итоговый охват зависит от многих факторов. В портфолио — более 150 млн просмотров у наших клиентов."
+                q: "Сколько видео мы снимем за один раз?",
+                a: "Мы работаем по системе пакетной съемки. За одну сессию (2–4 часа) мы снимаем контент на 3–4 недели вперед (обычно от 10 до 15 роликов). Это позволяет вам забыть о съемках на месяц и заниматься бизнесом."
               },
               {
-                q: "Можно ли заказать только монтаж без съёмки?",
-                a: "Да, если у вас есть отснятый материал, мы можем сделать только монтаж, цветокоррекцию и адаптацию. Стоимость рассчитывается индивидуально."
+                q: "Где проходят съемки?",
+                a: "Локацию подбираем под вашу концепцию: это может быть интерьерная студия, ваш офис, улица или атмосферное кафе. Поиск и бронирование локаций мы берем на себя."
               },
               {
-                q: "Какое оборудование вы используете?",
-                a: "Профессиональные камеры Sony/Canon, стабилизаторы, студийный свет, микрофоны Rode. Вся техника обновляется ежегодно."
+                q: "Могу ли я вносить правки в монтаж?",
+                a: "Да, в стоимость включено до трех кругов правок. Мы всегда на связи, чтобы довести результат до идеала."
               }
             ].map((item, idx) => (
               <Card key={idx} className="p-6 bg-card animate-scale-in" style={{ animationDelay: `${idx * 0.05}s` }}>
