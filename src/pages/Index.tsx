@@ -142,10 +142,10 @@ const Index = () => {
           <div className="flex items-center justify-between">
             <h1 className="text-2xl font-bold text-primary">AK Production</h1>
             <div className="hidden md:flex gap-8">
-              {["Главная", "Портфолио", "Услуги", "Кейсы", "О нас", "Контакты"].map((item, idx) => (
+              {["Главная", "Портфолио", "Примеры", "Кейсы", "О нас", "Контакты"].map((item, idx) => (
                 <button
                   key={item}
-                  onClick={() => scrollToSection(["hero", "portfolio", "services", "cases", "about", "contacts"][idx])}
+                  onClick={() => scrollToSection(["hero", "portfolio", "examples", "cases", "about", "contacts"][idx])}
                   className="text-sm font-medium hover:text-primary transition-colors"
                 >
                   {item}
@@ -239,20 +239,40 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="services" className="py-20 px-6">
+      <section id="examples" className="py-20 px-6">
         <div className="container mx-auto">
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Услуги</h2>
-            <p className="text-xl text-muted-foreground">Полный цикл производства вертикального контента</p>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Примеры роликов</h2>
+            <p className="text-xl text-muted-foreground">Работаем с различными нишами и создаём вирусный контент</p>
           </div>
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {services.map((service, idx) => (
-              <Card key={idx} className="p-8 bg-card hover:bg-secondary/50 transition-colors duration-300 animate-scale-in" style={{ animationDelay: `${idx * 0.1}s` }}>
-                <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-6">
-                  <Icon name={service.icon as any} size={32} className="text-primary" />
+          <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {[
+              { title: "Медицина", icon: "Heart", link: "https://t.me/case_reels" },
+              { title: "Приложения", icon: "Smartphone", link: "https://t.me/case_reels" },
+              { title: "Бьюти", icon: "Sparkles", link: "https://t.me/case_reels" },
+              { title: "Дизайн/ремонт", icon: "Home", link: "https://t.me/case_reels" },
+              { title: "Автомобили", icon: "Car", link: "https://t.me/case_reels" },
+              { title: "Одежда/мода/фешн", icon: "Shirt", link: "https://t.me/case_reels" },
+              { title: "Развлекательные", icon: "Play", link: "https://t.me/case_reels" },
+              { title: "Инфобизнес/подкасты", icon: "Mic", link: "https://t.me/case_reels" },
+              { title: "Экспертные", icon: "Award", link: "https://t.me/case_reels" }
+            ].map((category, idx) => (
+              <Card key={idx} className="p-6 bg-card hover:bg-secondary/50 transition-all duration-300 animate-scale-in group" style={{ animationDelay: `${idx * 0.05}s` }}>
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                    <Icon name={category.icon as any} size={24} className="text-primary" />
+                  </div>
+                  <h3 className="text-lg font-semibold flex-1">{category.title}</h3>
                 </div>
-                <h3 className="text-2xl font-semibold mb-4">{service.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">{service.description}</p>
+                <a 
+                  href={category.link} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-primary text-sm font-medium hover:underline inline-flex items-center gap-1"
+                >
+                  Посмотреть в ТГ
+                  <Icon name="ExternalLink" size={14} />
+                </a>
               </Card>
             ))}
           </div>
