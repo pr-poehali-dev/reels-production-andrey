@@ -436,75 +436,91 @@ const Index = () => {
       </section>
 
       <section id="about" className="py-20 px-6">
-        <div className="container mx-auto max-w-4xl">
+        <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12 animate-fade-in">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">О продакшене</h2>
           </div>
-          <Card className="p-12 bg-card">
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div className="relative overflow-hidden rounded-2xl">
+              <img 
+                src="https://cdn.poehali.dev/projects/fe7e43e7-22fd-427c-97c3-24fb8bd196ea/files/286e280c-0ad0-48dd-a989-5718c20979ca.jpg" 
+                alt="Команда продакшена" 
+                className="w-full h-full object-cover aspect-square"
+              />
+            </div>
             <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
-              <p>
-                <span className="text-primary font-semibold">Андрей Кожевников</span> — режиссёр и продюсер с 8-летним опытом в производстве вирусного контента для социальных сетей.
+              <p className="text-foreground font-semibold text-xl">
+                Немного истории
               </p>
               <p>
-                Мы специализируемся на создании вертикальных видео (Reels, Shorts, Stories), которые не просто красиво выглядят, но и работают на ваш бизнес. За последние 3 года наши клиенты набрали более <span className="text-primary font-semibold">150 миллионов просмотров</span>.
+                Более <span className="text-primary font-semibold">12 лет</span> наша команда занимается маркетингом. Изначально это были перфоманс инструменты (SEO, контекстная реклама, разработка сайтов). Мы привлекли более <span className="text-primary font-semibold">400.000 заявок</span> для бизнеса.
               </p>
               <p>
-                Наш подход — это сочетание киноматографичной картинки, точного попадания в тренды и глубокого понимания алгоритмов социальных сетей. Каждый проект для нас уникален, и мы создаём контент, который выделяется среди миллионов роликов.
+                В последние годы мы специализируемся на создании вертикальных видео (Reels, Shorts, TikTok), которые не просто красиво выглядят, но и работают на ваш бизнес. За последние 3 года наши клиенты набрали более <span className="text-primary font-semibold">150 миллионов просмотров</span>.
+              </p>
+              <p>
+                Наш подход — это сочетание качественной картинки, цепляющей идеи и попадания в аудиторию.
               </p>
             </div>
-          </Card>
+          </div>
         </div>
       </section>
 
-      <section id="pricing" className="py-20 px-6">
+      <section id="pricing" className="py-20 px-6 bg-secondary/30">
         <div className="container mx-auto">
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Стоимость съёмки Reels</h2>
-            <p className="text-xl text-muted-foreground">Прозрачные цены без скрытых платежей</p>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Цены и тарифы</h2>
+            <p className="text-xl text-muted-foreground">Выберите подходящий формат работы</p>
           </div>
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {[
               {
-                name: "Старт",
-                price: "от 30 000 ₽",
-                period: "за ролик",
+                name: "Съемка и монтаж",
+                price: "от 50 000 ₽",
+                period: "за 10 роликов",
                 features: [
-                  "1 готовый Reels до 60 сек",
-                  "Разработка концепции",
-                  "Съёмка до 3 часов",
-                  "Монтаж и цветокоррекция",
-                  "1 правка включена"
+                  "Анализируем нишу (аккаунты коллег и конкурентов)",
+                  "Находим успешные идеи (темы, заходы) и придумываем новые на основании анализа и своего опыта",
+                  "Пишем сценарии на согласованные идеи",
+                  "Приезжаем с проф. оборудованием: камера, петлички, свет (если требуется)",
+                  "Монтаж (динамичный, соответствующий трендам)",
+                  "Согласование, корректировка",
+                  "Отдаем пачку готовых роликов"
                 ],
-                icon: "Rocket"
+                icon: "Video"
               },
               {
-                name: "Профи",
-                price: "от 80 000 ₽",
-                period: "за серию",
-                popular: true,
+                name: "ИИ-аватар",
+                price: "от 50 000 ₽",
+                period: "за 10 роликов",
                 features: [
-                  "3-5 готовых Reels",
-                  "Глубокая проработка сценариев",
-                  "Съёмка до 8 часов",
-                  "Профессиональная команда",
-                  "Неограниченные правки",
-                  "Адаптация под все площадки"
+                  "Снимаем на проф. камеру 4-5 разных нейроаватаров (в разных локациях и одеждах) с 2х ракурсов",
+                  "Создаем нейроаватара (далее он будет принадлежать вам)",
+                  "Анализируем нишу (аккаунты коллег и конкурентов)",
+                  "Находим успешные идеи и придумываем новые на основании анализа",
+                  "Пишем сценарии на согласованные идеи",
+                  "На основе аудиодорожек создаем видео с нейроаватаром (в 2х ракурсах)",
+                  "Монтаж (динамичный, соответствующий трендам)",
+                  "Согласование, корректировка и отдача готовых роликов"
                 ],
-                icon: "Crown"
+                icon: "Sparkles"
               },
               {
                 name: "Комплекс",
-                price: "от 200 000 ₽",
-                period: "в месяц",
+                price: "от 70 000 ₽",
+                period: "под ключ",
+                popular: true,
                 features: [
-                  "15-30 роликов в месяц",
-                  "Контент-план на месяц",
-                  "Регулярные съёмки",
-                  "Аналитика и оптимизация",
-                  "Приоритетная поддержка",
-                  "Ведение аккаунтов"
+                  "Продумываем стратегию",
+                  "Анализируем нишу (аккаунты коллег и конкурентов)",
+                  "Находим успешные идеи и придумываем новые на основании анализа и своего опыта",
+                  "Пишем сценарии на согласованные идеи",
+                  "Приезжаем с проф. оборудованием: камера, петлички, свет и снимаем по сценариям",
+                  "Монтаж (динамичный, соответствующий трендам)",
+                  "Согласование, корректировка",
+                  "Выкладка во все соцсети"
                 ],
-                icon: "Building2"
+                icon: "Crown"
               }
             ].map((plan, idx) => (
               <Card key={idx} className={`p-8 relative overflow-hidden animate-scale-in ${plan.popular ? 'border-2 border-primary shadow-2xl scale-105' : 'bg-card'}`} style={{ animationDelay: `${idx * 0.1}s` }}>
