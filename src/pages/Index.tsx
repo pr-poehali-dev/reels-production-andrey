@@ -46,6 +46,13 @@ const Index = () => {
       platform: "YouTube Shorts"
     },
     {
+      image: "https://cdn.poehali.dev/files/2025-12-18_05-21-55.png",
+      title: "Томатный?",
+      views: "11 млн",
+      category: "Вирусный контент",
+      platform: "YouTube Shorts"
+    },
+    {
       image: "https://cdn.poehali.dev/files/2025-12-18_05-21-11.png",
       title: "Делайте это и будете благодарить меня до конца жизни",
       views: "5,5 млн",
@@ -67,10 +74,24 @@ const Index = () => {
       platform: "TikTok"
     },
     {
+      image: "https://cdn.poehali.dev/files/2025-12-18_05-22-05.png",
+      title: "Как прийти к счастью?",
+      views: "990 тыс.",
+      category: "Бизнес и коучинг",
+      platform: "Instagram Reels"
+    },
+    {
       image: "https://cdn.poehali.dev/files/2025-12-18_05-21-44.png",
       title: "Российский клуб управленцев",
       views: "1,4 млн",
       category: "Бизнес",
+      platform: "Instagram Reels"
+    },
+    {
+      image: "https://cdn.poehali.dev/files/2025-12-18_05-22-15.png",
+      title: "Безопасность в косметологии прежде всего",
+      views: "811 тыс.",
+      category: "Экспертиза",
       platform: "Instagram Reels"
     }
   ];
