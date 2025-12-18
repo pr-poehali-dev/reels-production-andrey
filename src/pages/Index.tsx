@@ -39,88 +39,39 @@ const Index = () => {
 
   const portfolio = [
     {
-      image: "https://cdn.poehali.dev/files/166229b9-924d-4290-8107-c04731323eb9.jpg",
+      image: "https://cdn.poehali.dev/files/2025-12-18_05-20-57.png",
       title: "Ты же тоже с волосами",
       views: "16 млн",
       category: "Развлекательный контент",
       platform: "YouTube Shorts"
     },
     {
-      image: "https://cdn.poehali.dev/files/166229b9-924d-4290-8107-c04731323eb9.jpg",
-      title: "Томатный сок",
-      views: "11 млн",
-      category: "Вирусные челленджи",
+      image: "https://cdn.poehali.dev/files/2025-12-18_05-21-11.png",
+      title: "Делайте это и будете благодарить меня до конца жизни",
+      views: "5,5 млн",
+      category: "Экспертный контент",
       platform: "YouTube Shorts"
     },
     {
-      image: "https://cdn.poehali.dev/files/166229b9-924d-4290-8107-c04731323eb9.jpg",
-      title: "Как вода просто",
-      views: "11 млн",
-      category: "Реакции и обзоры",
-      platform: "YouTube Shorts"
-    },
-    {
-      image: "https://cdn.poehali.dev/files/166229b9-924d-4290-8107-c04731323eb9.jpg",
+      image: "https://cdn.poehali.dev/files/2025-12-18_05-21-22.png",
       title: "Сможешь?",
       views: "10 млн",
       category: "Интерактивный контент",
       platform: "YouTube Shorts"
     },
     {
-      image: "https://cdn.poehali.dev/files/166229b9-924d-4290-8107-c04731323eb9.jpg",
-      title: "Заходит один пожарный",
-      views: "5,8 млн",
-      category: "Скетчи и юмор",
-      platform: "YouTube Shorts"
-    },
-    {
-      image: "https://cdn.poehali.dev/files/166229b9-924d-4290-8107-c04731323eb9.jpg",
-      title: "Серьёзно пошла?",
-      views: "4,6 млн",
-      category: "Ситуативный юмор",
-      platform: "YouTube Shorts"
-    },
-    {
-      image: "https://cdn.poehali.dev/files/f15a933c-77e3-47f3-9f97-9b91356b74cf.jpg",
-      title: "Коллагеностимуляция глазами доктора",
-      views: "47 тыс.",
-      category: "Экспертный контент",
-      platform: "YouTube"
-    },
-    {
-      image: "https://cdn.poehali.dev/files/f15a933c-77e3-47f3-9f97-9b91356b74cf.jpg",
-      title: "Страхи врачей о полимолочной кислоте",
-      views: "18 тыс.",
-      category: "Образовательный",
-      platform: "YouTube"
-    },
-    {
-      image: "https://cdn.poehali.dev/files/2f3b226b-7491-45d6-be7c-907a9a2ab4c5.jpg",
-      title: "Как прийти к счастью?",
-      views: "991 тыс.",
-      category: "Бизнес и коучинг",
-      platform: "Instagram Reels"
-    },
-    {
-      image: "https://cdn.poehali.dev/files/2f3b226b-7491-45d6-be7c-907a9a2ab4c5.jpg",
-      title: "Кофейные зёрна крупный план",
-      views: "1,1 млн",
-      category: "Эстетика и продукт",
+      image: "https://cdn.poehali.dev/files/2025-12-18_05-21-33.png",
+      title: "За пятёрку я тебя сам пострижу",
+      views: "3,9 млн",
+      category: "Барбершоп",
       platform: "TikTok"
     },
     {
-      image: "https://cdn.poehali.dev/files/2f3b226b-7491-45d6-be7c-907a9a2ab4c5.jpg",
-      title: "Безопасность в косметологии",
-      views: "811 тыс.",
-      category: "Экспертиза",
+      image: "https://cdn.poehali.dev/files/2025-12-18_05-21-44.png",
+      title: "Российский клуб управленцев",
+      views: "1,4 млн",
+      category: "Бизнес",
       platform: "Instagram Reels"
-    },
-    {
-      image: "https://cdn.poehali.dev/files/a97cbffd-3c65-47b4-908b-972cb4e6372c.jpg",
-      title: "Закреплённый рилс барбершопа",
-      views: "1,7 млн",
-      category: "Локальный бизнес",
-      platform: "TikTok"
     }
   ];
 
